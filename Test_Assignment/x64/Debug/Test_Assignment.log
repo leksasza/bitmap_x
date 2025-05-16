@@ -1,0 +1,9 @@
+﻿  bitmap.cpp
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(82,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(83,22): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(84,20): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(114,91): warning C4267: =: преобразование из "size_t" в "DWORD"; возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(119,33): warning C4267: =: преобразование из "size_t" в "LONG"; возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(120,31): warning C4267: =: преобразование из "size_t" в "LONG"; возможна потеря данных
+D:\работа и учеба\test\Test_Assignment\bitmap.cpp(129,2): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Test_Assignment.vcxproj -> D:\работа и учеба\test\Test_Assignment\x64\Debug\Test_Assignment.exe

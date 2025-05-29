@@ -23,23 +23,23 @@ bitmap::~bitmap() {
 
 };
 
-// поставить пикселю по индексу цвет
+// ГЇГ®Г±ГІГ ГўГЁГІГј ГЇГЁГЄГ±ГҐГ«Гѕ ГЇГ® ГЁГ­Г¤ГҐГЄГ±Гі Г¶ГўГҐГІ
 void bitmap::set_pixel(const Pixel& pixel, int x, int y) {
 	pixels[y][x].red = pixel.red;
 	pixels[y][x].green = pixel.green;
 	pixels[y][x].blue = pixel.blue;
 };
 
-// получить ширину рисунка
+// ГЇГ®Г«ГіГ·ГЁГІГј ГёГЁГ°ГЁГ­Гі Г°ГЁГ±ГіГ­ГЄГ 
 int bitmap::get_width() const {
 	return this->width;
 };
-// получить высоту рисунка
+// ГЇГ®Г«ГіГ·ГЁГІГј ГўГ»Г±Г®ГІГі Г°ГЁГ±ГіГ­ГЄГ 
 int bitmap::get_hight() const {
 	return this->height;
 };
 
-// загрузить рисунок из файла
+// Г§Г ГЈГ°ГіГ§ГЁГІГј Г°ГЁГ±ГіГ­Г®ГЄ ГЁГ§ ГґГ Г©Г«Г 
 void bitmap::load_image(std::string filename) {
 	std::ifstream file(filename.c_str(), std::ios::in | std::ios::binary);
 
@@ -98,7 +98,7 @@ void bitmap::load_image(std::string filename) {
 	file.close();
 }
 
-// загрузить рисунок в файл
+// Г§Г ГЈГ°ГіГ§ГЁГІГј Г°ГЁГ±ГіГ­Г®ГЄ Гў ГґГ Г©Г«
 void bitmap::export_image(std::string filename) const {
 	std::ofstream file(filename, std::ios_base::binary);
 	if (!file)
@@ -147,7 +147,7 @@ void bitmap::export_image(std::string filename) const {
 	file.close();
 }
 
-// вывести рисунок в консоль
+// ГўГ»ГўГҐГ±ГІГЁ Г°ГЁГ±ГіГ­Г®ГЄ Гў ГЄГ®Г­Г±Г®Г«Гј
 void bitmap::show_image() {
 	std::cout << "Showing image:\n\n";
 	for (int h = 0; h < height; h++)
@@ -164,13 +164,13 @@ void bitmap::show_image() {
 	}
 }
 
-// нарисовать точку
+// Г­Г Г°ГЁГ±Г®ГўГ ГІГј ГІГ®Г·ГЄГі
 void bitmap::draw_point(int x, int y) {
 	Pixel p(0, 0, 0);
 	set_pixel(p, x, y);
 }
 
-// рисование линии по алгоритму Брезенхэма
+// Г°ГЁГ±Г®ГўГ Г­ГЁГҐ Г«ГЁГ­ГЁГЁ ГЇГ® Г Г«ГЈГ®Г°ГЁГІГ¬Гі ГЃГ°ГҐГ§ГҐГ­ГµГЅГ¬Г 
 void bitmap::bresenham_line_drawing(int x1, int y1, int x2, int y2) {
 	bool steep = abs(y2 - y1) > abs(x2 - x1);
 	if (steep) {

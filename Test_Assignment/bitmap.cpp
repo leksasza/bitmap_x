@@ -23,23 +23,23 @@ bitmap::~bitmap() {
 
 };
 
-// ïîñòàâèòü ïèêñåëþ ïî èíäåêñó öâåò
+// поставить пикселю по индексу цвет
 void bitmap::set_pixel(const Pixel& pixel, int x, int y) {
 	pixels[y][x].red = pixel.red;
 	pixels[y][x].green = pixel.green;
 	pixels[y][x].blue = pixel.blue;
 };
 
-// ïîëó÷èòü øèðèíó ðèñóíêà
+// получить ширину рисунка
 int bitmap::get_width() const {
 	return this->width;
 };
-// ïîëó÷èòü âûñîòó ðèñóíêà
+// получить высоту рисунка
 int bitmap::get_hight() const {
 	return this->height;
 };
 
-// çàãðóçèòü ðèñóíîê èç ôàéëà
+// загрузить рисунок из файла
 void bitmap::load_image(std::string filename) {
 	std::ifstream file(filename.c_str(), std::ios::in | std::ios::binary);
 
@@ -98,7 +98,7 @@ void bitmap::load_image(std::string filename) {
 	file.close();
 }
 
-// çàãðóçèòü ðèñóíîê â ôàéë
+// загрузить рисунок в файл
 void bitmap::export_image(std::string filename) const {
 	std::ofstream file(filename, std::ios_base::binary);
 	if (!file)
@@ -147,7 +147,7 @@ void bitmap::export_image(std::string filename) const {
 	file.close();
 }
 
-// âûâåñòè ðèñóíîê â êîíñîëü
+// вывести рисунок в консоль
 void bitmap::show_image() {
 	std::cout << "Showing image:\n\n";
 	for (int h = 0; h < height; h++)
@@ -164,13 +164,13 @@ void bitmap::show_image() {
 	}
 }
 
-// íàðèñîâàòü òî÷êó
+// нарисовать точку
 void bitmap::draw_point(int x, int y) {
 	Pixel p(0, 0, 0);
 	set_pixel(p, x, y);
 }
 
-// ðèñîâàíèå ëèíèè ïî àëãîðèòìó Áðåçåíõýìà
+// рисование линии по алгоритму Брезенхэма
 void bitmap::bresenham_line_drawing(int x1, int y1, int x2, int y2) {
 	bool steep = abs(y2 - y1) > abs(x2 - x1);
 	if (steep) {
